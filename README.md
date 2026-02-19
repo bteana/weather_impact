@@ -24,29 +24,23 @@ Analizar datos de viajes y condiciones meteorológicas para identificar patrones
 
 ## Estructura del repositorio
 
-```
 weather_impact/
-│
-├── src/                  # Script para obtener datos climáticos desde la web
-├── sql/                  # Consultas SQL utilizadas en el análisis
-├── data/                 # Dataset generado automáticamente
-├── images/               # Gráficas del análisis
-├── notebooks/            # Análisis exploratorio y prueba de hipótesis
-├── requirements.txt
-└── README.md
-```
+src/ → obtención de datos climáticos
+sql/ → consultas SQL
+data/ → datasets
+images/ → visualizaciones
+notebooks/ → análisis exploratorio y prueba de hipótesis
 
 ---
 
-##  Análisis exploratorio de datos
+## Análisis exploratorio de datos
 
 ### Empresas de taxi vs número de viajes
 
 ![Viajes por empresa](images/companies_trips.png)
 
 **Conclusión:**
-
-> (Escribe aquí tu interpretación: qué significa la concentración de viajes para el negocio)
+La demanda está concentrada en pocas compañías principales, lo que sugiere un mercado dominado por operadores grandes. Esto puede influir en tiempos de espera y disponibilidad de vehículos en horas pico.
 
 ---
 
@@ -55,8 +49,7 @@ weather_impact/
 ![Top barrios](images/top_neighborhoods.png)
 
 **Conclusión:**
-
-> (Explica qué indican las zonas de mayor demanda y cómo podría usarse esa información)
+Los viajes finalizan principalmente en zonas estratégicas de alto flujo, indicando patrones de movilidad recurrentes. Esta información puede utilizarse para posicionamiento predictivo de conductores.
 
 ---
 
@@ -65,36 +58,34 @@ weather_impact/
 ![Distribución duración](images/duration_distribution.png)
 
 **Conclusión:**
-
-> (Describe qué implica la forma de la distribución para la operación del servicio)
+Bajo condiciones climáticas adversas los viajes presentan mayor dispersión y tienden a durar más tiempo, sugiriendo impacto del tráfico y menor velocidad promedio.
 
 ---
 
 ## Prueba de hipótesis
 
-### Hipótesis nula (H0)
-
+**Hipótesis nula (H0):**
 La duración promedio de los viajes no cambia en sábados lluviosos.
 
-### Hipótesis alternativa (H1)
-
+**Hipótesis alternativa (H1):**
 La duración promedio de los viajes sí cambia en sábados lluviosos.
 
-### Nivel de significancia
+Nivel de significancia: α = 0.05
 
-α = 0.05
+Resultado:
+p-value < 0.05 → se rechaza H0
 
-### Resultado estadístico
+---
 
-p-value = **(coloca aquí tu valor)**
+## Interpretación de negocio
 
-### Decisión
+Existe evidencia estadística de que la lluvia incrementa la duración de los viajes hacia el aeropuerto.
 
-(Según tu resultado: rechazar o no rechazar H0)
+Esto permite a la empresa:
 
-### Interpretación de negocio
-
-> (Explica qué debería hacer la empresa con este resultado: precios dinámicos, estimaciones de tiempo, asignación de conductores, etc.)
+* Ajustar estimaciones de llegada
+* Aplicar precios dinámicos en condiciones climáticas adversas
+* Mejorar asignación preventiva de conductores
 
 ---
 
@@ -111,5 +102,5 @@ p-value = **(coloca aquí tu valor)**
 ## Autor
 
 Ana Bustamante
-[LinkedIn](https://www.linkedin.com/in/anaebustamante/)
-[GitHub](https://github.com/bteana)
+LinkedIn: https://www.linkedin.com/in/anaebustamante/
+GitHub: https://github.com/bteana
