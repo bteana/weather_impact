@@ -1,15 +1,12 @@
-"""
-Download and parse historical weather data for Chicago taxi analysis.
-The script extracts the weather table and saves it as a CSV dataset.
-"""
-
-
 import pandas as pd
 import requests  # Importa la librería para enviar solicitudes al servidor
 from bs4 import BeautifulSoup  # Importa la librería para analizar la página web
+from pathlib import Path
 
 URL = 'https://practicum-content.s3.us-west-1.amazonaws.com/data-analyst-eng/moved_chicago_weather_2017.html'
-OUTPUT_PATH = "../data/weather_records.csv"
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+OUTPUT_PATH = BASE_DIR / "data" / "weather_records.csv"
 
 def main():
     req = requests.get(URL)
